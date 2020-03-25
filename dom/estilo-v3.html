@@ -19,21 +19,30 @@
     .c3{
         background-color: blue;
     }
+
+    .girar{
+        transform:rotate(45deg);
+    }
+
 </style>
 
 <div id="app">
     <div class="caixas">
         <div class="demo" :class="{c1: aplicarC1}" @click="aplicarC1 = !aplicarC1"></div>
         <div class="demo"></div>
-        <div class="demo"></div>
+        <div class="demo" :class="[classeCSS, 'girar']"></div>
     </div>
+    <hr>
+    <input type="text" v-model="">
 </div>
 
 <script>
     new Vue({
         el:'#app',
         data: {
-            aplicarC1: false
+            aplicarC1: false,
+            classeCSS: 'C',
+            aplicarGirar: true
         }
 
     })
